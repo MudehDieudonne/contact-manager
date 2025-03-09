@@ -1,6 +1,5 @@
 import { useContacts } from "../context/ContactContext"
 import { Link } from "react-router-dom"
-import styles from './ContactList.css'
 
 const ContactList = () => {
     const { contacts, deleteContact } = useContacts()

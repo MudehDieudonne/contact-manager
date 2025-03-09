@@ -1,0 +1,22 @@
+import { Link } from "react-router-dom"
+import ContactList from "../Components/ContactList"
+import styles from './Home.css'
+
+function Home() {
+    return (
+      <div className={styles.homeContainer}>
+        <h1>Contact Manager</h1>
+        <Link to='/add'>
+          <div className="button-container" >
+          <button class="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
+            <path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path>
+            </svg>
+          </button>
+          </div>
+        </Link>
+      </div>
+    )
+}
+
+export default Home
