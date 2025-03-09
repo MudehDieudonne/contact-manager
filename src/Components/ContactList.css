@@ -1,0 +1,26 @@
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.contactItem {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactActions button {
+  margin-left: 10px;
+}

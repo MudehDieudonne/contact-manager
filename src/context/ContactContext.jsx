@@ -29,6 +29,5 @@ export const ContactProvider = ({ children }) => {
         <ContactContext.Provider value={{contacts, addContact, editContact, deleteContact}}>
             {children}
         </ContactContext.Provider>
-        
     )
 }
