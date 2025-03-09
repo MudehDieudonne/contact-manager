@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom"
 import ContactList from "../Components/ContactList"
-import styles from './Home.css'
+import  './Home.css'
 
 function Home() {
     return (
-      <div className={styles.homeContainer}>
+      <div className='homeContainer'>
         <h1>Contact Manager</h1>
+        <ContactList />
         <Link to='/add'>
           <div className="button-container" >
           <button class="button">
@@ -15,6 +16,7 @@ function Home() {
           </button>
           </div>
         </Link>
+        
       </div>
     )
 }

@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from 'yup'
-import styles from './ContactForm.css'
+import './ContactForm.css'
 
 const ContactForm = ({initialValues, onSubmit}) => {
     return(
@@ -13,14 +13,14 @@ const ContactForm = ({initialValues, onSubmit}) => {
           })}
           onSubmit={onSubmit}
         >
-            <Form className={styles.formContainer}>
-                <Field className = {styles.inputField} name="name" placeholder="Name" />
-                <ErrorMessage className={styles.error}  name='name' />
-                <Field className = {styles.inputField} name='email' placeholder= 'Email' />
-                <ErrorMessage className={styles.error}  name="email" />
-                <Field className = {styles.inputField} name='phone' placeholder='Phone Number' />
-                <ErrorMessage className={styles.error}  name="phone" />
-                <button className={styles.submitButton} type="submit">Save Contact</button>
+            <Form className='formContainer'>
+                <Field className = 'inputField' name="name" placeholder="Name" />
+                <ErrorMessage className='error'  name='name' />
+                <Field className = 'inputField' name='email' placeholder= 'Email' />
+                <ErrorMessage className='error'  name="email" />
+                <Field className = 'inputField' name='phone' placeholder='Phone Number' />
+                <ErrorMessage className='error' name="phone" />
+                <button className='submitButton' type="submit">Save Contact</button>
             </Form>
         </Formik>
     )

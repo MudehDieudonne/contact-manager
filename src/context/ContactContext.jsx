@@ -10,7 +10,7 @@ export const ContactProvider = ({ children }) => {
 
     //Function to add Contacts
     const addContact = (contact) => {
-        setContacts([...contacts, {id: uuidv4(), ...contact}])
+    setContacts((prevContacts) => [...prevContacts, { id: uuidv4(), ...contact }])
     }
 
     //Edit Contact

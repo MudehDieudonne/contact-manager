@@ -1,0 +1,32 @@
+import { useContacts } from "../context/ContactContext"
+import ContactForm from "../Components/ContactForm"
+import { useNavigate } from "react-router-dom"
+import './AddContact.css'
+
+function AddContact() {
+    const navigate = useNavigate()
+    const { contacts, addContact } = useContacts()
+
+
+    const addingContacts = (values) => {
+      if(contacts.some((contact) => contact.phone === values.phone)){
+        alert('This number already exist pls enter a different number')
+        return
+      }
+      addContact(values)
+      navigate('/')
+    }
+
+    return (
+      <div className="addContainer">
+        <h2>Add Contact</h2>
+        <ContactForm
+          initialValues={{ name: '', email: '', phone: ''}}
+          onSubmit={addingContacts}
+        />
+        <button className="backButton" onClick={() => navigate('/')}>Back</button>
+      </div>
+    )
+}
+
+export default AddContact

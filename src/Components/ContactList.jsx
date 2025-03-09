@@ -1,20 +1,23 @@
 import { useContacts } from "../context/ContactContext"
 import { Link } from "react-router-dom"
+import './ContactList.css'
 
 const ContactList = () => {
     const { contacts, deleteContact } = useContacts()
 
+    console.log(contacts)
+
     return (
-        <div className={styles.ContactList}>
+        <div className='contactList'>
           {contacts.length === 0 ? <p>No contact found.</p> : null}
-          {contacts.map((contact) => {
-            <div key={contact.id} className={styles.contactItem}>
-              <div className={styles.contactDetails}>
+          {contacts.map((contact) => (
+            <div key={contact.id} className='contactItem'>
+              <div className='contactDetails'>
                 <h3>{contact.name}</h3>
                 <p>{contact.email}</p>
                 <p>{contact.phone}</p>
               </div>
-              <div className={styles.contactActions}>
+              <div className='contactActions'>
                 <Link to={`/edit/${contact.id}`}>
                   <button>Edit</button>
                 </Link>
@@ -23,7 +26,7 @@ const ContactList = () => {
                 </button>
               </div>
             </div>
-          })}
+          ))}
         </div>
     )
 }
