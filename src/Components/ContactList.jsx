@@ -5,8 +5,6 @@ import './ContactList.css'
 const ContactList = () => {
     const { contacts, deleteContact } = useContacts()
 
-    console.log(contacts)
-
     return (
         <div className='contactList'>
           {contacts.length === 0 ? <p>No contact found.</p> : null}
@@ -19,9 +17,9 @@ const ContactList = () => {
               </div>
               <div className='contactActions'>
                 <Link to={`/edit/${contact.id}`}>
-                  <button>Edit</button>
+                  <button style={{backgroundColor: "green", border: "none", color:"#fff"}}>Edit</button>
                 </Link>
-                <button onClick={() => deleteContact(contact.id)} style={{ backgroundColor: "red" }}>
+                <button onClick={() => deleteContact(contact.id)} style={{ backgroundColor: "red", border: "none", color:"#fff"}}>
                     Delete
                 </button>
               </div>

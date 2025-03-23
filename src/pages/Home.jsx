@@ -15,6 +15,7 @@ function Home() {
             </svg>
           </button>
           </div>
+          <h6 style={{textAlign: "center", textDecoration: "none", color: "#000", border: "none"}}>Contact</h6>
         </Link>
         
       </div>
