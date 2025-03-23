@@ -24,7 +24,7 @@ function AddContact() {
           initialValues={{ name: '', email: '', phone: ''}}
           onSubmit={addingContacts}
         />
-        <button className="backButton" onClick={() => navigate('/')}>Back</button>
+        <button style={{border: "none", background: "#00A97F", padding: "1em", borderRadius: "10px", width: "120px" ,color: "#fff"}} className="backButton" onClick={() => navigate('/')}>Back</button>
       </div>
     )
 }
