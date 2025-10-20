@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
 import { v4 as uuidv4 } from "uuid"
 
 const ContactContext = createContext()
@@ -6,27 +6,43 @@ const ContactContext = createContext()
 export const useContacts = () => useContext(ContactContext)
 
 export const ContactProvider = ({ children }) => {
-    const [contacts, setContacts] = useState([])
+    const [contacts, setContacts] = useState(() => {
+        try {
+            const raw = localStorage.getItem("contacts")
+            return raw ? JSON.parse(raw) : []
+        } catch {
+            return []
+        }
+    })
 
-    //Function to add Contacts
+    // persist contacts to localStorage
+    useEffect(() => {
+        try {
+            localStorage.setItem("contacts", JSON.stringify(contacts))
+        } catch {
+            // come back later
+        }
+    }, [contacts])
+
+    // add Contacts
     const addContact = (contact) => {
-    setContacts((prevContacts) => [...prevContacts, { id: uuidv4(), ...contact }])
+        setContacts((prevContacts) => [...prevContacts, { id: uuidv4(), ...contact }])
     }
 
-    //Edit Contact
+    // Edit Contact
     const editContact = (updatedContact) => {
-        setContacts(
-            contacts.map((contact) => contact.id === updatedContact.id ? updatedContact : contact)
+        setContacts((prev) =>
+            prev.map((contact) => (contact.id === updatedContact.id ? updatedContact : contact))
         )
     }
 
-    // Delete Function
+    // Delete Function (usx functional update)
     const deleteContact = (id) => {
-        setContacts(contacts.filter((contact) => contact.id !== id))
+        setContacts((prev) => prev.filter((contact) => contact.id !== id))
     }
 
     return (
-        <ContactContext.Provider value={{contacts, addContact, editContact, deleteContact}}>
+        <ContactContext.Provider value={{ contacts, addContact, editContact, deleteContact }}>
             {children}
         </ContactContext.Provider>
     )

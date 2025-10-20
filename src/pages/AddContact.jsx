@@ -10,7 +10,6 @@ function AddContact() {
 
     const addingContacts = (values) => {
       if(contacts.some((contact) => contact.phone === values.phone)){
-        alert('This number already exist pls enter a different number')
         return
       }
       addContact(values)

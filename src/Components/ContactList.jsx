@@ -7,24 +7,47 @@ const ContactList = () => {
 
     return (
         <div className='contactList'>
-          {contacts.length === 0 ? <p>No contact found.</p> : null}
-          {contacts.map((contact) => (
-            <div key={contact.id} className='contactItem'>
-              <div className='contactDetails'>
-                <h3>{contact.name}</h3>
-                <p>{contact.email}</p>
-                <p>{contact.phone}</p>
-              </div>
-              <div className='contactActions'>
-                <Link to={`/edit/${contact.id}`}>
-                  <button style={{backgroundColor: "green", border: "none", color:"#fff"}}>Edit</button>
-                </Link>
-                <button onClick={() => deleteContact(contact.id)} style={{ backgroundColor: "red", border: "none", color:"#fff"}}>
-                    Delete
-                </button>
-              </div>
+          <div className="contactHeader">
+            <Link to="/add" className="addLink" aria-label="Add contact">
+              <div className="addButton" title="Add contact">+</div>
+              <div className="addLabel">Add Contact</div>
+            </Link>
+          </div>
+
+          {contacts.length === 0 ? <p className="noContacts">.</p> : (
+            <div className="tableWrapper">
+              <table className='contactsTable'>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th className="actionsCol">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {contacts.map((contact) => (
+                    <tr key={contact.id} className='contactRow'>
+                      <td>{contact.name}</td>
+                      <td>{contact.email}</td>
+                      <td>{contact.phone}</td>
+                      <td className="actionsCol">
+                        <Link to={`/edit/${contact.id}`}>
+                          <button className="btn btnEdit">Edit</button>
+                        </Link>
+                        <button
+                          onClick={() => deleteContact(contact.id)}
+                          className="btn btnDelete"
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          ))}
+          )}
         </div>
     )
 }

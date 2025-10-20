@@ -24,3 +24,107 @@
 .contactActions button {
   margin-left: 10px;
 }
+
+.contactHeader {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.addLink {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+}
+
+.addButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #28a745; /* green */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.addLabel {
+  font-size: 12px;
+  color: #333;
+  text-transform: none;
+}
+
+/* Table styles */
+.tableWrapper {
+  overflow-x: auto;
+  padding: 0 16px 16px;
+}
+
+.contactsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.contactsTable thead th {
+  text-align: left;
+  padding: 8px 12px;
+  background: #f6f8fa;
+  border-bottom: 1px solid #e1e4e8;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.contactsTable tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.actionsCol {
+  width: 180px;
+  text-align: left;
+}
+
+.btn {
+  padding: 6px 10px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btnEdit {
+  background-color: #28a745;
+}
+
+.btnDelete {
+  background-color: #d9534f;
+}
+
+/* Empty state */
+.noContacts {
+  padding: 12px 16px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .actionsCol {
+    width: 140px;
+  }
+
+  .addLabel {
+    font-size: 11px;
+  }
+}

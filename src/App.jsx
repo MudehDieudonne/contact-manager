@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ContactProvider } from './context/ContactContext'
 import Home from './pages/Home'
 import AddContact from './pages/AddContact'
-import EditContact from './pages/EditContact'
+import EditContact from './Components/EditContact'
 import React from 'react'
 import './App.css'
 
