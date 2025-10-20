@@ -1,0 +1,91 @@
+.formContainer {
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1em;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+
+.submitButton {
+ --color: #00A97F;
+ padding: 0.8em 1.7em;
+ background-color: transparent;
+ border-radius: .3em;
+ position: relative;
+ overflow: hidden;
+ cursor: pointer;
+ transition: .5s;
+ font-weight: 400;
+ font-size: 17px;
+ border: 1px solid;
+ font-family: inherit;
+ text-transform: uppercase;
+ color: var(--color);
+ z-index: 1;
+}
+
+.submitButton::before, .submitButton::after {
+ content: '';
+ display: block;
+ width: 50px;
+ height: 50px;
+ transform: translate(-50%, -50%);
+ position: absolute;
+ border-radius: 50%;
+ z-index: -1;
+ background-color: var(--color);
+ transition: 1s ease;
+}
+
+.submitButton::before {
+ top: -1em;
+ left: -1em;
+}
+
+.submitButton::after {
+ left: calc(100% + 1em);
+ top: calc(100% + 1em);
+}
+
+.submitButton:hover::before, .submitButton:hover::after {
+ height: 410px;
+ width: 410px;
+}
+
+.submitButton:hover {
+ color: rgb(10, 25, 30);
+}
+
+.submitButton:active {
+ filter: brightness(.8);
+}
+
+.button:hover::before, .button:hover::after {
+ height: 410px;
+ width: 410px;
+}
+
+.button:hover {
+ color: rgb(10, 25, 30);
+}
+
+.button:active {
+ filter: brightness(.8);
+}

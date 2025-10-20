@@ -1,16 +1,23 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ContactProvider } from './context/ContactContext'
+import Home from './pages/Home'
+import AddContact from './pages/AddContact'
+import EditContact from './Components/EditContact'
 import React from 'react'
 import './App.css'
 
 function App() {
 
   return (
-    <>
-      <h2>App Mian</h2>
-      <button className='btn btn-success me-2'>
-        <i className='fa fa-home' />Submit
-      </button>
-    </>
+    <ContactProvider>
+      <Router>
+        <Routes>
+          <Route path='/' element={< Home />} />
+          <Route path='/add' element={< AddContact />} />
+          <Route path='./edit/:id' element={< EditContact />} />
+        </Routes>
+      </Router>
+    </ContactProvider>
   )
 }
 
